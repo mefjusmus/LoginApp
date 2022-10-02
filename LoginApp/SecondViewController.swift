@@ -18,6 +18,4 @@ class SecondViewController: UIViewController {
         greetingLabel.text = "Welcome, \(userName ?? "")"
     }
     
-    
-
 }

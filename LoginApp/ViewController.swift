@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userName = userNameTextField.text, !userName.isEmpty,
               let password = passwordTextField.text, !password.isEmpty,
-              userName == "User", password == "Password" else {
+              userName == userData.userName, password == userData.password else {
             showAlertWith(title: "Incorrect input", message: "Check your username or password") { _ in
                 self.passwordTextField.text = ""
             }
@@ -47,7 +47,6 @@ class ViewController: UIViewController {
         }
     }
 }
-    
 
 
 extension ViewController {
