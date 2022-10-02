@@ -36,32 +36,13 @@ class ViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-    @IBAction func logInButtonDidTapped(_ sender: UIButton) {
+    @IBAction func helpButtonDidTapped(_ sender: UIButton) {
         switch sender {
         case forgotPasswordButton:
             showAlertWith(title: "Oops!", message: "Your password is \(userData.password)", handler: nil)
-            return
         default:
             showAlertWith(title: "Oops!", message: "Your name is \(userData.userName)", handler: nil)
-            return
         }
-    }
-}
-
-
-extension ViewController {
-    func showAlertWith(title: String?, message: String?, handler: ((UIAlertAction) -> Void)?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: handler)
-        alert.addAction(alertAction)
-        self.present(alert, animated: true)
-    }
-}
-
-extension ViewController {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
     }
 }
 
