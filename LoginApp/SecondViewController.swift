@@ -15,7 +15,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingLabel.text = "Welcome \(userName ?? "")"
+        greetingLabel.text = "Welcome, \(userName ?? "")"
     }
     
     

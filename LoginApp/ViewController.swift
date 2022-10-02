@@ -14,15 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var forgotUsernameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
-    @IBOutlet var logInButton: UIButton!
     
     private let userData = UserData()
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userName = userNameTextField.text, !userName.isEmpty,
@@ -64,7 +57,12 @@ extension ViewController {
         alert.addAction(alertAction)
         self.present(alert, animated: true)
     }
-    
-    
+}
+
+extension ViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
 }
 
