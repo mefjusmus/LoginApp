@@ -17,5 +17,4 @@ class GreetingViewController: UIViewController {
         super.viewDidLoad()
         greetingLabel.text = "Welcome, \(userName ?? "")"
     }
-    
 }

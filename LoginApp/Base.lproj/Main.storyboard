@@ -41,7 +41,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="logInButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="4oI-8Z-LRN"/>
-                                            <segue destination="8P9-wf-gD4" kind="presentation" modalPresentationStyle="fullScreen" id="he2-Qg-Tw1"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZLx-mE-1ie">
@@ -58,7 +57,7 @@
                                                     <action selector="helpButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUt-ex-sA6"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7g-TL-QUG">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7g-TL-QUG">
                                                 <rect key="frame" x="201" y="0.0" width="173" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -84,9 +83,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="KDL-eC-esg"/>
                     <connections>
-                        <outlet property="forgotPasswordButton" destination="e7g-TL-QUG" id="FcM-kt-Cbh"/>
                         <outlet property="passwordTextField" destination="Ryi-hu-Vm9" id="S9a-T6-HCA"/>
                         <outlet property="userNameTextField" destination="U0c-Pf-Ks8" id="JKM-44-VFn"/>
+                        <segue destination="8P9-wf-gD4" kind="presentation" identifier="showGreetingVC" modalPresentationStyle="fullScreen" id="cBH-xC-ANj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
