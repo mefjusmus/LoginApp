@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserData {
+struct UserData {
     let userName = "User"
     let password = "Password"
 }

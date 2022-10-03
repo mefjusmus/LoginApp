@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class GreetingViewController: UIViewController {
 
     @IBOutlet var greetingLabel: UILabel!
     
