@@ -12,12 +12,23 @@ class LogInViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let userName = "User"
-    private let password = "Password"
+    private let user = User.getUser()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let secondVC = segue.destination as? GreetingViewController else { return }
-        secondVC.userName = userName
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        
+        viewControllers.forEach { viewController in
+            if let greetingVC = viewController as? GreetingViewController {
+                greetingVC.personName = user.person.name
+                greetingVC.personSurname = user.person.surname
+            } else if let navigationVC = viewController as? UINavigationController {
+                if let profileVC = navigationVC.viewControllers.first as? ProfileViewController {
+                    profileVC.personName = user.person.name
+                    profileVC.personSurname = user.person.surname
+                }
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -26,7 +37,7 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func logInButtonDidTapped() {
-        guard userNameTextField.text == userName, passwordTextField.text == password else {
+        guard userNameTextField.text == user.name, passwordTextField.text == user.password else {
             showAlertWith(
                 title: "Incorrect input",
                 message: "Check your username or password",
@@ -44,8 +55,8 @@ class LogInViewController: UIViewController {
     
     @IBAction func helpButtonDidTapped(_ sender: UIButton) {
         sender.tag == 1
-        ? showAlertWith(title: "Oops!", message: "Your password is \(password)")
-        : showAlertWith(title: "Oops!", message: "Your name is \(userName)")
+        ? showAlertWith(title: "Oops!", message: "Your password is \(user.password)")
+        : showAlertWith(title: "Oops!", message: "Your name is \(user.name)")
     }
     
     private func showAlertWith(title: String?, message: String?, textField: UITextField? = nil) {

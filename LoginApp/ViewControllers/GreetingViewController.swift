@@ -11,31 +11,31 @@ class GreetingViewController: UIViewController {
 
     @IBOutlet var greetingLabel: UILabel!
     
-    var userName: String!
+    var personName: String!
+    var personSurname: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetingLabel.text = "Welcome, \(userName ?? "")"
+        greetingLabel.text = "Welcome, \(personName ?? "") \(personSurname ?? "")"
         setGradient()
     }
     
     private func setGradient() {
-        let gradient = CAGradientLayer()
-        
         let color1 = UIColor(
-            red: 197 / 255,
-            green: 125 / 255,
-            blue: 141 / 255,
+            red: 243 / 255,
+            green: 178 / 255,
+            blue: 190 / 255,
             alpha: 1
         ).cgColor
         
         let color2 = UIColor(
-            red: 135 / 255,
-            green: 152 / 255,
-            blue: 220 / 255,
+            red: 120 / 255,
+            green: 136 / 255,
+            blue: 153 / 255,
             alpha: 1
         ).cgColor
         
+        let gradient = CAGradientLayer()
         gradient.colors = [color1, color2]
         gradient.frame = view.bounds
         gradient.startPoint = CGPoint(x: 0, y: 0)

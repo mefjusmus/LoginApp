@@ -85,14 +85,14 @@
                     <connections>
                         <outlet property="passwordTextField" destination="Ryi-hu-Vm9" id="S9a-T6-HCA"/>
                         <outlet property="userNameTextField" destination="U0c-Pf-Ks8" id="JKM-44-VFn"/>
-                        <segue destination="8P9-wf-gD4" kind="presentation" identifier="showGreetingVC" modalPresentationStyle="fullScreen" id="cBH-xC-ANj"/>
+                        <segue destination="WmT-g9-U5P" kind="presentation" identifier="showGreetingVC" modalPresentationStyle="fullScreen" id="cBH-xC-ANj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-231.8840579710145" y="6.6964285714285712"/>
         </scene>
-        <!--Greeting View Controller-->
+        <!--Home-->
         <scene sceneID="Nft-cW-vxi">
             <objects>
                 <viewController id="8P9-wf-gD4" customClass="GreetingViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,18 +112,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuX-ut-XX0">
-                                <rect key="frame" x="175" y="707" width="64" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuX-ut-XX0">
+                                <rect key="frame" x="176.5" y="659" width="61" height="34"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Log out"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="coR-4n-qgv" kind="unwind" unwindAction="unwindFor:" id="h4m-9q-QQh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Uq-ER-Mdp"/>
-                        <color key="backgroundColor" red="0.7730723445107337" green="0.60768431425094604" blue="0.3642599880695343" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dQq-pF-59D" firstAttribute="leading" secondItem="8Uq-ER-Mdp" secondAttribute="leading" constant="20" id="5Pk-dV-I13"/>
                             <constraint firstItem="D66-ah-WR4" firstAttribute="top" secondItem="dQq-pF-59D" secondAttribute="bottom" constant="40" id="HDz-9b-Mjo"/>
@@ -134,6 +135,8 @@
                             <constraint firstItem="D66-ah-WR4" firstAttribute="centerX" secondItem="uSH-st-Y4z" secondAttribute="centerX" id="vP7-oy-ZUA"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="KWA-t7-LYE"/>
+                    <navigationItem key="navigationItem" id="9Iu-Rm-8CE"/>
                     <connections>
                         <outlet property="greetingLabel" destination="dQq-pF-59D" id="Abs-HW-gvn"/>
                     </connections>
@@ -141,15 +144,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wT2-pk-VqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="coR-4n-qgv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="513" y="7"/>
+            <point key="canvasLocation" x="512" y="757"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="7va-aG-bRO">
+            <objects>
+                <viewController id="fFd-R3-x2o" customClass="ProfileViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2B2-cs-0ot">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Py-ZF-Fmf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nHi-Rm-zYz">
+                        <barButtonItem key="rightBarButtonItem" title="Bio" id="iHQ-lg-DnZ">
+                            <connections>
+                                <segue destination="2tD-hR-3jB" kind="show" id="Mnl-JP-71R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cb9-no-JFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2170" y="757"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mft-LR-wVm">
+            <objects>
+                <viewController id="2tD-hR-3jB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vDz-LZ-Rzk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uhN-j8-juD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gNR-6N-eNI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLd-Js-lfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2968" y="757"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GMr-O7-Gmy">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WmT-g9-U5P" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ljr-ak-RXC">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemGray2Color"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8P9-wf-gD4" kind="relationship" relationship="viewControllers" id="90K-Sb-fg6"/>
+                        <segue destination="aGw-pS-79c" kind="relationship" relationship="viewControllers" id="OoT-D4-ZBl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQM-vf-RuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="511.59420289855075" y="6.6964285714285712"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="HFu-q1-1jP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aGw-pS-79c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="4sc-Jl-ksx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="beI-Oj-rVo">
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fFd-R3-x2o" kind="relationship" relationship="rootViewController" id="F3f-7U-eGe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8O-bl-abv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365" y="757"/>
         </scene>
     </scenes>
     <resources>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
