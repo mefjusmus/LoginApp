@@ -13,9 +13,9 @@ class LogInViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     private let user = User.getUser()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         userNameTextField.text = user.name
         passwordTextField.text = user.password
     }
@@ -26,8 +26,7 @@ class LogInViewController: UIViewController {
         
         viewControllers.forEach { viewController in
             if let greetingVC = viewController as? GreetingViewController {
-                greetingVC.personName = user.person.name
-                greetingVC.personSurname = user.person.surname
+                greetingVC.person = user.person
             } else if let navigationVC = viewController as? UINavigationController {
                 if let profileVC = navigationVC.viewControllers.first as? ProfileViewController {
                     profileVC.person = user.person

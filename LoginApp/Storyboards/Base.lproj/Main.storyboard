@@ -127,7 +127,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Uq-ER-Mdp"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
                             <constraint firstItem="dQq-pF-59D" firstAttribute="leading" secondItem="8Uq-ER-Mdp" secondAttribute="leading" constant="20" id="5Pk-dV-I13"/>
                             <constraint firstItem="D66-ah-WR4" firstAttribute="top" secondItem="dQq-pF-59D" secondAttribute="bottom" constant="40" id="HDz-9b-Mjo"/>
@@ -159,6 +159,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dKM-i8-wXs">
                                 <rect key="frame" x="132" y="165.5" width="150" height="147.5"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dKM-i8-wXs" secondAttribute="height" multiplier="1:1" id="K63-i6-ev6"/>
                                     <constraint firstAttribute="height" constant="150" id="ae3-0T-GW6"/>
@@ -266,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="2170" y="757"/>
         </scene>
-        <!--View Controller-->
+        <!--Bio View Controller-->
         <scene sceneID="mft-LR-wVm">
             <objects>
-                <viewController id="2tD-hR-3jB" sceneMemberID="viewController">
+                <viewController id="2tD-hR-3jB" customClass="BioViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDz-LZ-Rzk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,6 +291,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gNR-6N-eNI"/>
+                    <connections>
+                        <outlet property="profileInfoLabel" destination="gQY-Bp-2DA" id="hrN-kJ-LQF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLd-Js-lfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,6 +354,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

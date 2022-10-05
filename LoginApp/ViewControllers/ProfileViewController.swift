@@ -18,15 +18,20 @@ class ProfileViewController: UIViewController {
     
     var person: Person!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.setGradient()
+        setupPersonInfo()
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         profilePhoto.layer.cornerRadius = profilePhoto.bounds.height / 2
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupPersonInfo()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let bioVC = segue.destination as? BioViewController else { return }
+        bioVC.person = person
     }
     
     private func setupPersonInfo() {

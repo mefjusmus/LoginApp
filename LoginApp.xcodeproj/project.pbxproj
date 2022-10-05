@@ -17,6 +17,8 @@
 		86E52A9D28ECAF650072156F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E52A9C28ECAF640072156F /* Person.swift */; };
 		86E52A9F28ECE3BA0072156F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E52A9E28ECE3BA0072156F /* ProfileViewController.swift */; };
 		86E52AA528ECF58A0072156F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E52AA428ECF58A0072156F /* User.swift */; };
+		86E52AA728EE15D20072156F /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E52AA628EE15D10072156F /* BioViewController.swift */; };
+		86E52AA928EE1B840072156F /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E52AA828EE1B840072156F /* Extension + UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		86E52A9C28ECAF640072156F /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		86E52A9E28ECE3BA0072156F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		86E52AA428ECF58A0072156F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		86E52AA628EE15D10072156F /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
+		86E52AA828EE1B840072156F /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				86E52AA028ECECFB0072156F /* App */,
+				86E52AAA28EE1B8D0072156F /* Extensions */,
 				86E52AA128ECED060072156F /* ViewControllers */,
 				86E52AA228ECED150072156F /* Models */,
 				86E52AA328ECF0170072156F /* Storyboards */,
@@ -89,6 +94,7 @@
 				86CEF83428E9F29500C3D805 /* LogInViewController.swift */,
 				86CEF84428E9FDE100C3D805 /* GreetingViewController.swift */,
 				86E52A9E28ECE3BA0072156F /* ProfileViewController.swift */,
+				86E52AA628EE15D10072156F /* BioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -109,6 +115,14 @@
 				86CEF83B28E9F29E00C3D805 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		86E52AAA28EE1B8D0072156F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				86E52AA828EE1B840072156F /* Extension + UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +199,9 @@
 				86E52A9F28ECE3BA0072156F /* ProfileViewController.swift in Sources */,
 				86CEF84528E9FDE100C3D805 /* GreetingViewController.swift in Sources */,
 				86CEF83528E9F29500C3D805 /* LogInViewController.swift in Sources */,
+				86E52AA728EE15D20072156F /* BioViewController.swift in Sources */,
 				86CEF83128E9F29500C3D805 /* AppDelegate.swift in Sources */,
+				86E52AA928EE1B840072156F /* Extension + UIView.swift in Sources */,
 				86E52A9D28ECAF650072156F /* Person.swift in Sources */,
 				86CEF83328E9F29500C3D805 /* SceneDelegate.swift in Sources */,
 				86E52AA528ECF58A0072156F /* User.swift in Sources */,
