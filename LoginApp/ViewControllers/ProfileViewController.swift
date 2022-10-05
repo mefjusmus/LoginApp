@@ -30,6 +30,8 @@ class ProfileViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         profilePhoto.layer.cornerRadius = profilePhoto.bounds.height / 2
+        profilePhoto.layer.borderWidth = 1
+        profilePhoto.layer.borderColor = UIColor.black.cgColor
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,7 +42,7 @@ class ProfileViewController: UIViewController {
     //    MARK: Private methods
     private func setupPersonInfo() {
         navigationItem.title = "\(person.name) \(person.surname)"
-        profilePhoto.image = person.profilePhoto ?? UIImage(systemName: "person")
+        profilePhoto.image = person.profilePhoto
         nameLabel.text = person.name
         surnameLabel.text = person.surname
         ageLabel.text = String(person.age)

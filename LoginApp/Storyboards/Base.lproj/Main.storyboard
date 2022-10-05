@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,7 +25,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0c-Pf-Ks8">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="nickname"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ryi-hu-Vm9">
                                         <rect key="frame" x="0.0" y="67.5" width="280" height="34.5"/>
@@ -116,11 +117,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuX-ut-XX0">
-                                <rect key="frame" x="122.5" y="359" width="75" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <rect key="frame" x="131" y="366" width="58" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log out">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="linkColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="coR-4n-qgv" kind="unwind" unwindAction="unwindFor:" id="h4m-9q-QQh"/>
@@ -139,7 +140,9 @@
                             <constraint firstItem="D66-ah-WR4" firstAttribute="centerX" secondItem="uSH-st-Y4z" secondAttribute="centerX" id="vP7-oy-ZUA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="KWA-t7-LYE"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="KWA-t7-LYE">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="9Iu-Rm-8CE"/>
                     <connections>
                         <outlet property="greetingLabel" destination="dQq-pF-59D" id="Abs-HW-gvn"/>
@@ -148,7 +151,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wT2-pk-VqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="coR-4n-qgv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="512" y="757"/>
+            <point key="canvasLocation" x="510" y="756"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="7va-aG-bRO">
@@ -158,12 +161,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dKM-i8-wXs">
-                                <rect key="frame" x="85" y="114" width="150" height="147.5"/>
-                                <color key="tintColor" systemColor="systemGrayColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dKM-i8-wXs">
+                                <rect key="frame" x="85" y="112.5" width="150" height="150"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dKM-i8-wXs" secondAttribute="height" multiplier="1:1" id="K63-i6-ev6"/>
-                                    <constraint firstAttribute="height" constant="150" id="ae3-0T-GW6"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oPT-PO-2xX">
@@ -246,6 +248,7 @@
                             <constraint firstItem="dKM-i8-wXs" firstAttribute="top" secondItem="6Py-ZF-Fmf" secondAttribute="top" constant="20" id="VXf-xN-CqX"/>
                             <constraint firstItem="oPT-PO-2xX" firstAttribute="leading" secondItem="6Py-ZF-Fmf" secondAttribute="leading" constant="16" id="WcJ-yT-M9C"/>
                             <constraint firstItem="dKM-i8-wXs" firstAttribute="centerX" secondItem="2B2-cs-0ot" secondAttribute="centerX" id="cgx-J5-CUQ"/>
+                            <constraint firstItem="dKM-i8-wXs" firstAttribute="width" secondItem="2B2-cs-0ot" secondAttribute="height" multiplier="75:284" id="emn-ds-Na0"/>
                             <constraint firstItem="oPT-PO-2xX" firstAttribute="top" secondItem="dKM-i8-wXs" secondAttribute="bottom" constant="20" id="n3m-A9-ecT"/>
                         </constraints>
                     </view>
@@ -308,8 +311,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ljr-ak-RXC">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -325,7 +328,9 @@
         <scene sceneID="HFu-q1-1jP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aGw-pS-79c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="4sc-Jl-ksx"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="4sc-Jl-ksx">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="beI-Oj-rVo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>

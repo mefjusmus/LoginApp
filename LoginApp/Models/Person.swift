@@ -7,10 +7,10 @@
 import UIKit
 
 struct Person {
-    let profilePhoto: UIImage?
     let name: String
     let surname: String
     let age: Int
     let profession: String
     let bio: String
+    var profilePhoto: UIImage? = UIImage(systemName: "person")
 }
