@@ -43,5 +43,4 @@ class ProfileViewController: UIViewController {
         professionLabel.text = person.profession
     }
     
-
 }
