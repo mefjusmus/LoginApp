@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    //    MARK: IBOutlets
     @IBOutlet var profilePhoto: UIImageView!
     
     @IBOutlet var nameLabel: UILabel!
@@ -16,8 +17,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet var ageLabel: UILabel!
     @IBOutlet var professionLabel: UILabel!
     
+    //    MARK: Public properties
     var person: Person!
     
+    //    MARK: Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setGradient()
@@ -34,6 +37,7 @@ class ProfileViewController: UIViewController {
         bioVC.person = person
     }
     
+    //    MARK: Private methods
     private func setupPersonInfo() {
         navigationItem.title = "\(person.name) \(person.surname)"
         profilePhoto.image = person.profilePhoto ?? UIImage(systemName: "person")

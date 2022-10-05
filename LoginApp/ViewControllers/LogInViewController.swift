@@ -9,11 +9,14 @@ import UIKit
 
 class LogInViewController: UIViewController {
 
+//    MARK: IBOutlets
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    
+ 
+    //    MARK: Private properties
     private let user = User.getUser()
-        
+     
+    //    MARK: Override methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         userNameTextField.text = user.name
@@ -40,6 +43,7 @@ class LogInViewController: UIViewController {
         view.endEditing(true)
     }
     
+    //    MARK: IBActions
     @IBAction func logInButtonDidTapped() {
         guard userNameTextField.text == user.name, passwordTextField.text == user.password else {
             showAlertWith(
@@ -63,6 +67,7 @@ class LogInViewController: UIViewController {
         : showAlertWith(title: "Oops!", message: "Your name is \(user.name)")
     }
     
+    //    MARK: Private methods
     private func showAlertWith(title: String?, message: String?, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default) { _ in

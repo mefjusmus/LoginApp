@@ -9,10 +9,13 @@ import UIKit
 
 class BioViewController: UIViewController {
 
+    //    MARK: IBOutlets
     @IBOutlet var profileInfoLabel: UILabel!
     
+    //    MARK: Public properties
     var person: Person!
     
+    //    MARK: Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setGradient()

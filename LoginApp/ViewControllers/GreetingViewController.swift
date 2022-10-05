@@ -9,10 +9,13 @@ import UIKit
 
 class GreetingViewController: UIViewController {
 
+    //    MARK: IBOutlets
     @IBOutlet var greetingLabel: UILabel!
     
+    //    MARK: Public properties
     var person: Person!
     
+    //    MARK: Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         greetingLabel.text = "Welcome, \(person.name) \(person.surname)"
