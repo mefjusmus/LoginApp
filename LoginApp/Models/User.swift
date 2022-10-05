@@ -4,6 +4,7 @@
 //
 //  Created by Vladislav Suslov on 5.10.22.
 //
+import UIKit
 
 struct User {
     let name: String
@@ -15,10 +16,12 @@ struct User {
             name: "User",
             password: "Password",
             person: Person(
+                profilePhoto: UIImage(named: "MyPhoto"),
                 name: "Vlad",
                 surname: "Suslov",
                 age: 28,
-                profession: "Doctor"
+                profession: "Doctor",
+                bio: "В 2017 году окончил Белорусский государственный медуниверситет. В настоящее время работаю врачом-онкологом в Минском онкологическом центре. В настоящее время прохожу курс iOS-разработчик на портале SwiftBook. В будущем планирую стать профессиональным iOS-разрабом и создавать крутые проекты"
             )
         )
     }

@@ -14,6 +14,12 @@ class LogInViewController: UIViewController {
     
     private let user = User.getUser()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userNameTextField.text = user.name
+        passwordTextField.text = user.password
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarVC.viewControllers else { return }
@@ -24,8 +30,7 @@ class LogInViewController: UIViewController {
                 greetingVC.personSurname = user.person.surname
             } else if let navigationVC = viewController as? UINavigationController {
                 if let profileVC = navigationVC.viewControllers.first as? ProfileViewController {
-                    profileVC.personName = user.person.name
-                    profileVC.personSurname = user.person.surname
+                    profileVC.person = user.person
                 }
             }
         }

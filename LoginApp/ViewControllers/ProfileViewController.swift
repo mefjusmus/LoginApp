@@ -9,12 +9,33 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    var personName: String!
-    var personSurname: String!
+    @IBOutlet var profilePhoto: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "\(personName ?? "") \(personSurname ?? "")"
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var surnameLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var professionLabel: UILabel!
+    
+    var person: Person!
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        profilePhoto.layer.cornerRadius = profilePhoto.bounds.height / 2
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupPersonInfo()
+    }
+    
+    private func setupPersonInfo() {
+        navigationItem.title = "\(person.name) \(person.surname)"
+        profilePhoto.image = person.profilePhoto ?? UIImage(systemName: "person")
+        nameLabel.text = person.name
+        surnameLabel.text = person.surname
+        ageLabel.text = String(person.age)
+        professionLabel.text = person.profession
     }
     
 
